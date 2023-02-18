@@ -1,0 +1,217 @@
+<!DOCTYPE html5>
+<html>
+    <head>
+
+        <meta name="author" content="LiliW" />
+        <meta name="description" content="HTML bascico"/>
+        <meta name="keywords" content="codigo, HTML, etiqueta, web" />
+        <meta charset= "UTF-8"/>
+        <meta name="viewport" content="widt=device-width, initial-scale=1.0"/>
+
+        <title>LWAnime House</title>
+            <link rel="shortcut icon" href="imagenes/lwah.png"/>
+            <link rel="stylesheet" href="estilo.css">
+            <script type="text/JavaScript">
+                // vamos a guardar en una variable el titulo que tenemos actualmente
+                let previousTitle = document.title 
+                // Y con blur escuchamos el evento de window Y dentro ejecutamos el código que va a ocurrir cuando se cambie de pestaña
+                window.addEventListener('blur', () => {
+                // Volvemos a guardar la variable del titulo que tenemos actualmente
+                previousTitle = document.title
+                // Y ahora ponemos lo que queremos que vea el receptor cuando se vaya de nuestra página
+                document.title = 'No te vayas! Vuelve! :('
+                })
+                // Y también vamos a escuchar el evento focus de manera que cuando vuelva el receptor a nuestra página, vuelva al titulo original
+                window.addEventListener('focus', () => {
+                document.title = previousTitle
+                })
+            </script>
+    </head>
+        
+    <body>
+        <script type="text/JavaScript">
+            alert ( 'Bienvenidos a mi página oficial' );
+        </script>
+        <a id="anclaparavolveralprincipio"></a>
+        <header>
+            <a href="#" class="logo">
+                <img src="imagenes\lwah.png" alt="logo de mi negocio" class="logotipe">
+                <h2 class="nombrenegocio">LWAnimeHouse</h2>
+            </a>
+        
+            <nav>
+                <ul class="menuhorizontal">
+                    <li><a href="index.html">Inicio</a></li>
+                        <li>
+                            <a href="#">Sobre nuestra tienda</a>
+                        <ul class="menuvertical">
+                            <li><a href="indexlibros.html">Libros</a></li>
+                            <li><a href="indexdiscos.html">Discos</a></li>
+                            <li><a href="indexropa.html">Ropa</a></li>
+                            <li><a href="indexobjetos.html">Objetos</a></li>
+                        </ul>
+                        <li><a href="indexcont.html">Contacto</a></li>
+                        <div class="buscar">
+                            <input type="text" placeholder="Buscar">
+                            <div class="busqueda">
+                                <i class="librosmusicaobjetos">
+                                        
+                                </i>
+                            </div>
+                        </div>
+                    </ul>
+                </nav>
+            </header>
+        <article class="mrgart">
+            <h1>Novedades:</h1>
+            <hr/> 
+            <ul>
+                <h2>Mangas</h2>
+                <section>
+
+                </section>
+                <h2>Discos</h2>
+                
+                <section>
+                    <h2>Figuras</h2>
+                    <div class="carrusel">
+                        <div class="carrusel-items">
+                            <div class="carrusel-item">
+                                <a href="objetosimagenes\figurahxh.jpg"></a><img src="objetosimagenes\figurahxh.jpg" alt="" />
+                            </div>
+                            <div class="carrusel-item">
+                                <a href="objetosimagenes\figuraningguang.jpg"></a><img src="objetosimagenes\figuraningguang.jpg" alt="" />
+                            </div>
+                            <div class="carrusel-item">
+                                <a href="objetosimagenes\figurashanksyluffyop.jpg"></a><img src="objetosimagenes\figurashanksyluffyop.jpg" alt="" />
+                            </div>
+                            <div class="carrusel-item">
+                                <a href="objetosimagenes\figuralevi.jpg"></a><img src="objetosimagenes\figuralevi.jpg" alt="" >
+                            </div>
+                            <div class="carrusel-item">
+                                <a href="objetosimagenes\funkopikachu.jpg"></a><img src="objetosimagenes\funkopikachu.jpg" alt="pikachu" >
+                            </div>
+                            <div class="carrusel-item">
+                                <a href="objetosimagenes\funkokakashi.jpg"></a><img src="objetosimagenes\funkokakashi.jpg" alt="kakashi" >
+                            </div>
+                            <div class="carrusel-item">
+                                <a href="objetosimagenes\funkokirito.jpg"></a><img src="objetosimagenes\funkokirito.jpg" alt="kirito" >
+                            </div>
+                            <div class="carrusel-item">
+                                <a href="objetosimagenes\funkonezuko.jpg"></a><img src="objetosimagenes\funkonezuko.jpg" alt="nezuko" >
+                            </div>
+                            <div class="carrusel-item">
+                                <a href="objetosimagenes\funkorapunzel.jpg"></a><img src="objetosimagenes\funkorapunzel.jpg" alt="rapunzel" >
+                            </div>
+                            <div class="carrusel-item">
+                                <a href="objetosimagenes\funkolaw.jpg"></a><img src="objetosimagenes\funkolaw.jpg" alt="law" >
+                            </div>
+                            <div class="carrusel-item">
+                                <a href="objetosimagenes\funkolevi.jpg"></a><img src="objetosimagenes\funkolevi.jpg" alt="" >
+                            </div>
+                        </div>
+                    </div>
+                    <script type="text/JavaScript">
+                        const carrusel = document.querySelector('.carrusel-items');
+                            let maxScrollLeft = carrusel.scrollWidth - carrusel.clientWidth;
+                            let intervalo = null;
+                            let step = 1;
+
+                            const start = () => {
+                            intervalo = setInterval(function() {
+                                carrusel.scrollLeft = carrusel.scrollLeft + step;
+                                if (carrusel.scrollLeft === maxScrollLeft) {
+                                step = step * -1;
+                                } else if (carrusel.scrollLeft === 0) {
+                                step = step * -1;
+                                }
+                            }, 10);
+                            };
+
+                            const stop = () => {
+                            clearInterval(intervalo);
+                            };
+
+                            carrusel.addEventListener('mouseover', () => {
+                            stop();
+                            });
+
+                            carrusel.addEventListener('mouseout', () => {
+                            start();
+                            });
+
+                            start();
+                        // const carrusel = document.querySelector('.carrusel-items');
+                        // let maxScrollLeft = carrusel.scrollWidth - carrusel.clientWidth;
+                        // let intervalo = null;
+                        // let step = 1;
+
+                        // const start = () => {
+                        //     intervalo = setInterval (function () {
+                        //         carrusel.scrollLeft = carrusel.scrollLeft + step;
+                        //         if (carrusel.scrollLeft === maxScrollLeft) {
+                        //             step = step * -1;
+                        //         } else if (carrusel.scrollLeft === 0){
+                        //             step = step * -1;
+                        //         }
+                        //     }, 10);
+                        // };
+
+                        // const stop = () => {
+                        //     clearInterval(intervalo);
+                        // };
+
+                        // carrusel.addEventListener('mouseover', () =>{
+                        //     stop();
+                        // });
+
+                        // carrusel.addEventListener('mouseout', () =>{
+                        //     start();
+                        // });
+                        // start();
+                    </script>
+
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <a href="objetosimagenes\funkozoro.jpg"></a><img src="objetosimagenes\funkozoro.jpg" alt="zoro" >
+                    <a href="objetosimagenes\funkoL.jpg"></a><img src="objetosimagenes\funkoL.jpg" alt="L" >
+                    <a href="objetosimagenes\funkoAce.jpg"></a><img src="objetosimagenes\funkoAce.jpg" alt="Ace" >
+                    <a href="objetosimagenes\figuraeren.jpg"></a><img src="objetosimagenes\figuraeren.jpg" alt="" >
+                    <a href="objetosimagenes\figurachibi02.jpg"></a><img src="objetosimagenes\figurachibi02.jpg" alt="DarlingInTheFranxx" >
+                    <a href="objetosimagenes\figurachibibokunohero.jpg"></a><img src="objetosimagenes\figurachibibokunohero.jpg" alt="BokuNoHeroAcademy" >
+                    <a href="objetosimagenes\chapashaikyuu.jpg"></a><img src="objetosimagenes\chapashaikyuu.jpg" alt="haikyuu" >
+                    <a href="objetosimagenes\chapassnk.jpg"></a><img src="objetosimagenes\chapassnk.jpg" alt="SNK" >
+                    <a href="objetosimagenes\chapapinchainsawman.jpg"></a><img src="objetosimagenes\chapapinchainsawman.jpg" alt="ChainSawMan" >
+                    <a href="objetosimagenes\chapasdemonslayer.jpg"></a><img src="objetosimagenes\chapasdemonslayer.jpg" alt="KimetsuNoYaiba" >
+                    <a href="objetosimagenes\chapasop.jpg"></a><img src="objetosimagenes\chapasop.jpg" alt="OP" >
+                    <a href="objetosimagenes\pegatinabts.jpg"></a><img src="objetosimagenes\pegatinabts.jpg" alt="bts" >
+                    <a href="objetosimagenes\pegatinahaikyuu.jpg"></a><img src="objetosimagenes\pegatinahaikyuu.jpg" alt="haikyuu" >
+                    <a href="objetosimagenes\pegatinapokemon.jpg"></a><img src="objetosimagenes\pegatinapokemon.jpg" alt="pokemon" >
+                    <a href="objetosimagenes\pegatinatokyorevenge.jpg"></a><img src="objetosimagenes\pegatinatokyorevenge.jpg" alt="TokyoRevenge" >
+                    <a href="objetosimagenes\pegatinasspyfamily.jpg"></a><img src="objetosimagenes\pegatinasspyfamily.jpg" alt="SpyxFamily" >
+                    <a href="objetosimagenes\peluchekuromi.jpg"></a><img src="objetosimagenes\peluchekuromi.jpg" alt="kuromi" >
+                    <a href="objetosimagenes\pelucheshibainu.jpg"></a><img src="objetosimagenes\pelucheshibainu.jpg" alt="ShibaInu" >
+                    <a href="objetosimagenes\llaverodragonball.jpg"></a><img src="objetosimagenes\llaverodragonball.jpg" alt="DragonBall" >
+                    <a href="objetosimagenes\llaverohatsunemiku.jpg"></a><img src="objetosimagenes\llaverohatsunemiku.jpg" alt="Miku" >
+                    <a href="objetosimagenes\collarweatheringwithyou.jpg"></a><img src="objetosimagenes\collarweatheringwithyou.jpg" alt="weatheringwithyou" >
+                </section>
+                <br>
+                <h2>Cosplays</h2>
+            </ul>     
+        </article>
+        <footer>
+            <ul class="pie">
+                <li><a href="https://www.listadomanga.es">Mangas que han salido</a></li>
+                    <li>
+                        <a href="https://www.instagram.com/norma_editorial/">Ig Oficial de NormaComic</a>
+                    <li><a href="indexcont.html">Contacto</a></li>
+            </ul>
+            <a href="#anclaparavolveralprincipio">Vuelta al principio</a>
+        </footer>
+    </body>
+</html>
