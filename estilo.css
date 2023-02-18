@@ -1,0 +1,315 @@
+/* Body header y footer no editar */
+body{
+    background-color: rgb(255, 255, 255);
+    font-family: sans-serif;
+    margin: 0%;
+    overflow-x: hidden;
+    max-width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+/* -----------------------------------------------------------------------------Body de la pagina------------------------------------------------------------------------- */
+header{
+    display: flex;
+    background-color: rgb(132, 194, 186);
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    position: fixed;
+    height: 5%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    
+}
+
+.logotipe{
+    width: 20%;
+    height: 70%; 
+}
+
+.nombrenegocio{
+    text-align: center;
+    height: 50px;
+    margin-right: 10px; 
+}
+
+nav{
+    /* background-color: #faa629; */
+    max-width: 900px;
+    margin: 25%;
+    font-size: 20px;
+   
+}
+
+.menuhorizontal{
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+.menuhorizontal > li > a{
+    display: block;
+    padding: 10px 15px;
+    color: rgb(255, 208, 0);
+    text-decoration: none;
+
+}
+
+.menuhorizontal > li:hover{
+    background-color: rgb(207, 87, 57);
+}
+
+.menuvertical{
+    position: absolute;
+    display: none;
+    list-style: none;
+    width: 100px;
+    background-color: rgb(255, 136, 0);
+}
+
+.menuhorizontal li:hover .menuvertical{
+    display: block;
+}
+
+.menuvertical li:hover{
+    background-color: rgb(207, 87, 57);
+}
+
+.menuvertical li a{
+    display: block;
+    color: rgb(0, 0, 0);
+    padding: 10px 3px 0px 0px;
+    text-decoration: none;
+}
+
+nav a{
+    font-weight: 20%;
+    padding-right: 25px;
+}
+
+nav a:hover{
+    color:rgb(217, 255, 0) ;
+}
+
+.titulo{
+    color: rgb(0, 0, 0);
+    align-items: center;
+}
+
+.subtitulo{
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(96, 126, 57);
+
+}
+
+.tabla{
+    background: rgb(108, 160, 11);
+}
+
+.contactocenter{
+    position: absolute;
+    align-items: center;
+}
+
+.buscar{
+    position: absolute;
+    left: 75%;
+    top: 8%;
+   padding: 10px;
+}
+
+input {
+    outline: none;
+    box-sizing: border-box;
+    height: 60px;
+    width: 0;
+    padding: 0 20px;
+    color: black;
+    border-radius: 50px;
+    font-size: 20px;
+    border: 1px solid red;
+    transition: all .5s ease;
+}
+
+::placeholder {
+    color: grey;
+}
+
+.busqueda{
+    position: absolute;
+    right: 0%;
+    top: -1%;
+    width: 80px;
+    height: 80px;
+    background: #d50000;
+    line-height: 80px;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.busqueda i {
+    font-size: 25px;
+    color: white;
+    line-height: 80px;
+    transition: all .5 ease;
+}
+
+.buscar:hover input {
+    width: 350px;
+}
+
+.buscar:hover i {
+    transform: rotate(-360deg);
+}
+
+.busqueda:hover{
+    background-color: rgb(6, 90, 90);
+}
+  /* ---------------------------------------------------------------------------Header junto a un nav-------------------------------------------------------------------*/
+.compra{
+    width: 200px;
+    align-self: center;
+
+}
+
+.tipodeletra {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    width: 100%;
+
+}
+
+.margen {
+    margin-left: 5%;
+    margin-top: 6%;
+}
+
+.fotomrg {
+    margin-left: 5%;
+}
+
+.mrgart {
+    margin-top: 5%;
+    margin-left: 40;
+}
+
+section {
+    display: flex;
+    width: 90%; 
+    height: 430px;
+    
+}
+
+section img {
+    width: 0px;
+    flex-grow: 1;
+    object-fit: cover;
+    opacity: .8;
+    transition: .5 ease;
+}
+
+section img:hover {
+    cursor: crosshair;
+    width: 200px;
+    opacity: 1;
+    filter: contrast(120%);
+}
+
+main {
+    position: relative;
+    flex: 1 0 auto; /* Para que el contenido de la página se expanda para llenar todo el espacio restante */
+}
+
+.friendly{
+    width: 30%;
+    height: 40%;  
+    align-self: center;
+}
+/* ------------------------------------------------------CARRUSEL----------------------------------------------------------------------- */
+.carrusel {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.carrusel-items {
+    display: flex;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding: 50px 0px;
+
+}
+
+.carrusel-item {
+    min-width: 300px;
+    max-width: 300px;
+    height: 200px;
+    /* outline: 2px solid black; */
+    
+}
+
+.carrusel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carrusel-item:hover {
+    transform: scale(1.2);
+}
+/* ---------------------------------------------------------------------------------------------FIN DE CARRUSEL---------------------------------------------------- */
+/* -----------------------------------------------------------------------------------------------------Footer-------------------------------------------------------------------- */
+footer {
+    background-color: rgb(0, 0, 0);
+    align-items: center;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 0%;
+    flex-shrink: 0; /* Para que el pie de página no se encoja si hay poco contenido */
+    height: 50px; /* Altura fija del footer */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+}
+
+.pie{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.pie > li > a{
+    display: block;
+    padding: 10px 15px;
+    color: rgb(82, 68, 7);
+    text-decoration: none;
+
+}
+
+.pie > li:hover{
+    background-color: rgb(196, 62, 28);
+}
+/* ------------------------------------------------------------------------------------fin del footer----------------------------------------------------------------------------------- */
+
+
+
+
+
+
